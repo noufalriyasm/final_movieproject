@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+
+     Search and Explore
+{% endblock %}
+
+{% block title %}
+  Search
+{% endblock %}
+
+{% block content %}
+<div>
+    <p class="text-center my_search_text">YOU HAVE SEARCHED FOR :<b>"{{query}}"</b></p>
+</div>
+<div class="container">
+    <div class="row mx-auto">
+        {% for movie in movies %}
+        <div class="my_bottom_margin col-9 col-sm-12 col-md-4 xol-lg-4">
+            <div class="card text-center" style="width:20rem; height:30rem; margin-top:20px; margin-bottom:20px;">
+                 <img class="card-img-top my_image" src="{{movie.image.url}}" alt="{{movie.name}}" style="width:20rem; height:15rem;"> </a>
+                <div class="card-body">
+                    <div class="content1">
+                        <h4>{{movie.name}}</h4>
+                        <p>Starring: {{movie.actors}}</p>
+                        <p>Genre:{{movie.category}}</p>
+                        <p>Desc:{{movie.description}}</p>
+                        <a href="{{movie.get_url}}">
+                            <button type="button" class="btn btn-info">VIEW</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    {% empty %}
+
+        <div class="row mx-auto">
+            <p class="text-center my_search_text">RESULTS NOT FOUND</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

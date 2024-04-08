@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--    <link rel="stylesheet"  href="{% static 'css/custom.css' %}">-->
+    <title>Rating</title>
+</head>
+<body>
+<h1>Rating</h1>
+<form class="box" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button><br>
+    <a class="btn btn-success" href="{% url 'filmapp:allProdCat' %}">HOME</a>
+
+</form><br>
+
+<div>
+    {% for msg in messages %}
+    {{ msg }}
+    {% endfor %}
+</div>
+
+<div>
+    {% for i in task %}
+    <h5>{{i.movie}}</h5>
+{{i.rating}}/5 by {{i.user.username}} for {{i.movie}} on {{i.created_at}} <br>
+{% empty %}
+<p> No Ratings Yet</p>
+{% endfor %}
+</div>
+
+
+</body>
+</html>

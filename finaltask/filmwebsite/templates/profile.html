@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="{% static 'css/custom.css' %}">
+    <title>Title</title>
+</head>
+<body class="container1">
+<form class="box" method="post">
+    {% csrf_token %}
+    <h1>Hello {{user.first_name}}</h1>
+    <h3>Your Signup Credentials</h3>
+    <div>
+        <label >Username</label>
+        <input type="text" name="username" placeholder="Username" value="{{user.username}}" required>
+    </div>
+
+    <div>
+        <label >Email</label>
+        <input type="email" name="email" placeholder="Email" value="{{user.email}}" required>
+    </div>
+
+    <div>
+        <label >First Name</label>
+        <input type="text" name="first_name" placeholder="First Name" value="{{user.first_name}}" required>
+    </div>
+
+    <div>
+        <label >Last Name</label>
+        <input type="text" name="last_name" placeholder="Last Name" value="{{user.last_name}}" required>
+    </div>
+    <br><br>
+    <div>
+        <button class="btn btn-success">Save</button>
+    </div>
+    <br>
+    <div>
+        <a class="btn btn-info" href="{% url 'filmapp:allProdCat' %}">
+         <button type="button" class="btn btn-info">HOME</button>
+        </a><br>
+        {% for k in messages %}
+        {{ k }}
+        {% endfor %}
+    </div>
+</form>
+
+</body>
+</html>

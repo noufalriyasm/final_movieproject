@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+  {{ movie.description |truncatewords:200 }}
+
+{% endblock %}
+
+{% block title %}
+   {% if category %}
+     {{ movie.name }}
+   {% endif %}
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+<div class="row my_prod_row_class">
+    <div class="text-center mx-auto">
+        <div>
+
+        <p><a href="{% url 'filmapp:allProdCat' %}">HOME</a> |<a href="{{movie.category.get_url}}">{{movie.category}}</a>|{{movie.name}} </p>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="row mx-auto">-->
+<!--    <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">-->
+<!--        <table class="table my_custom_table">-->
+<!--            <thead class="my_custom_thead">-->
+<!--            <tr>-->
+<!--                <th colspan="5">-->
+
+<!--                </th>-->
+
+<!--            </tr>-->
+
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--            <tr>-->
+<!--                <td>-->
+<!--                    <img src="{{movie.image.url}}" alt="{{movie.name}}" width="300" height="200">-->
+
+<!--                </td>-->
+<!--            </tbody>-->
+
+<!--        </table>-->
+<!--    </div>-->
+<!--<div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">-->
+<!--    <table class="table my_custom_table">-->
+<!--     <thead class="my_custom_thead">-->
+<!--     <tr>-->
+<!--         <th>-->
+<!--             DESCRIPTION-->
+<!--         </th>-->
+<!--     </tr>-->
+<!--     </thead>-->
+<!--        <tbody>-->
+<!--        <tr>-->
+<!--            <td>-->
+<!--                <h1>MOVIE: {{movie.name}}</h1>-->
+<!--            <p>STARRING: {{movie.actors}}</p>-->
+<!--            <p>GENRE: {{movie.category}}</p>-->
+<!--            <p>DESC: {{movie.description}}</p>-->
+<!--            <p>REL-DATE: {{movie.released}}</p>-->
+<!--            <p>TRAILOR: <a href="{{movie.link}}">{{movie.link}}</a></p>-->
+<!--            </td>-->
+<!--        </tr>-->
+
+<!--        </tbody>-->
+<!--    </table>-->
+<!--</div>-->
+<!--</div>-->
+
+
+
+
+
+<div class="container">
+    <div class="row mx-auto">
+        <div class="my_bottom_margin col-9 col-sm-12 col-md-4 xol-lg-4">
+            <div class="card text-center" style="width:25rem; height:35rem; background-color:black; margin-top:20px; margin-bottom:20px; margin-left:100px;">
+                <img class="card-img-top my_image" src="{{movie.image.url}}" alt="{{movie.name}}" style="width:25rem; height:25rem; border:15px solid black; border-radius:35px;"> </a>
+                <div class="card-body" >
+                    <div class="content">
+                        <h4 style="margin-top:10px; font-size:2em;">Title:{{movie.name}}</h4>
+<!--                        <p>STARRING: {{movie.actors}}</p>-->
+<!--                        <p>GENRE:{{movie.category}}</p>-->
+<!--                        <p>DESC:{{movie.description}}</p>-->
+<!--                        <p>REL-DATE: {{movie.released}}</p>-->
+<!--                         <a href="{{movie.link}}">-->
+<!--                         <button type="button" class="btn btn-success">TRAILOR</button>-->
+<!--                         </a>-->
+<!--                        <a class="btn btn-primary" href="{% url 'addapp:edit_movie' movie_id=movie.pk %}">EDIT</a>-->
+<!--                        <a class="btn btn-primary" href="{% url 'addapp:delete_movie' movie_id=movie.pk %}">DELETE</a>-->
+<!--                        <a class="btn btn-primary" href="{% url 'reviewapp:add_rating' movie_id=movie.pk %}">rating</a>-->
+<!--                        <a class="btn btn-primary" href="{% url 'reviewapp:add_comment' movie_id=movie.pk %}">review</a>-->
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            </div>
+         <div class="card text-center" style="width:25rem; height:35rem; background-color:black; margin-top:20px; margin-bottom:20px;margin-left:250px;">
+                <div class="card-body" >
+                    <div class="content">
+                         <h4 style="margin-top:10px; font-size:2em;">Title:{{movie.name}}</h4>
+                        <p style="margin-top:10px; font-size:1.2em;" >Starring: {{movie.actors}}</p>
+                        <p style="margin-top:5px; font-size:1.2em;">Genre:{{movie.category}}</p>
+                        <p style="margin-top:5px; font-size:1.2em;">Desc:{{movie.description}}</p>
+                        <p style="margin-top:5px; font-size:1.2em;">Rel-date: {{movie.released}}</p>
+                         <div>
+                             <a href="{{movie.link}}">
+                         <button type="button" class="btn btn-light">TRAILOR</button><br>
+                         </a>
+                         </div>
+                        <br>
+                        <div>
+                        <a class="btn btn-primary" style="margin-top:150px; margin-bottom:10px;   font-size:1em;"  href="{% url 'addapp:edit_movie' movie_id=movie.pk %}">EDIT</a>
+                        <a class="btn btn-danger" style="margin-top:150px; margin-bottom:10px;  font-size:1em;" href="{% url 'addapp:delete_movie' movie_id=movie.pk %}">DELETE</a>
+                        <a class="btn btn-info"  style="margin-top:150px; margin-bottom:10px;  font-size:1em;" href="{% url 'reviewapp:add_rating' movie_id=movie.pk %}">RATING</a>
+                        <a class="btn btn-warning" style="margin-top:150px; margin-bottom:10px;  font-size:1em;" href="{% url 'reviewapp:add_comment' movie_id=movie.pk %}">REVIEWS</a>
+                       </div>
+        </div>
+                </div>
+         </div>
+    </div>
+</div>
+
+<!--<div>-->
+<!--    <div>-->
+<!--
+    </div>
+</div>
+
+
+<--<div>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <form method="post">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        {% csrf_token %}&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <input type="radio" value="1"  name="rating">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <label >1</label><br>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <input type="radio" value="2"  name="rating">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <label >2</label><br>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <input type="radio" value="3"  name="rating">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <label >3</label><br>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <input type="radio" value="4"  name="rating">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <label >4</label><br>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <input type="radio" value="5"  name="rating">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <label >5</label><br>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <input type="text" maxlength="100" name="review" placeholder="Review">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <input type="submit">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    </form>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+
+
+<!--<h1>Reviews and Ratings</h1>-->
+<!--    <form method="post" enctype="multipart/form-data">-->
+<!--        {% csrf_token %}-->
+<!--        {{ form1.as_p }}-->
+<!--        <button type="submit">Save Changes</button>-->
+<!--         <a class="btn btn-info" href="{% url 'filmapp:allProdCat' %}">-->
+<!--         <button type="button" class="btn btn-info">HOME</button>-->
+<!--        </a>-->
+<!--    </form>-->
+
+
+<!--<div>-->
+<!--    <form action="" method="post">-->
+<!--        {% csrf_token %}-->
+<!--        <h5>Write Your Review</h5>-->
+<!--        <div>-->
+<!--            <div>-->
+<!--                <label>Rate the Movie</label>-->
+<!--                <br>-->
+<!--                <div class="rate">-->
+<!--                    <input type="radio" name="rating" id="rating10" value="5" required><label for="rating10" title="5"></label>-->
+<!--                    <input type="radio" name="rating" id="rating9" value="4.5" required><label for="rating9" title="4.5" class="half"></label>-->
+<!--                    <input type="radio" name="rating" id="rating8" value="4" required><label for="rating8" title="4"></label>-->
+<!--                    <input type="radio" name="rating" id="rating7" value="3.5" required><label for="rating7" title="3.5" class="half"></label>-->
+<!--                    <input type="radio" name="rating" id="rating6" value="3" required><label for="rating6" title="3"></label>-->
+<!--                    <input type="radio" name="rating" id="rating5" value="2.5" required><label for="rating5" title="2.5" class="half"></label>-->
+<!--                    <input type="radio" name="rating" id="rating4" value="2" required><label for="rating4" title="2"></label>-->
+<!--                    <input type="radio" name="rating" id="rating3" value="1.5" required><label for="rating3" title="1.5" class="half"></label>-->
+<!--                    <input type="radio" name="rating" id="rating2" value="1" required><label for="rating2" title="1"></label>-->
+<!--                    <input type="radio" name="rating" id="rating1" value="0.5" required><label for="rating1" title="0.5" class="half"></label>-->
+
+
+
+
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <br>-->
+<!--            Review:-->
+<!--            <textarea name="review" rows="4"></textarea>-->
+<!--            <br>-->
+<!--            <input type="submit" value="Submit Review">-->
+
+<!--        </div>-->
+<!--    </form>-->
+<!--</div>-->
+
+
+
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+   {% if category %}
+    {{ category.description|truncatewords:155 }}
+   {% else %}
+     WELCOME TO MOVIES
+   {% endif %}
+{% endblock %}
+
+{% block title %}
+  {% if category %}
+   {{ category.name }}
+  {% else %}
+    NEWLY ADDED
+  {% endif %}
+{% endblock %}
+
+
+{% block content %}
+{% if category %}
+<div>
+    <div class="row my_row_class">
+        <div class="mx-auto">
+            <center>
+        <p><a class="btn btn-success" href="{% url 'filmapp:allProdCat' %}">HOME</a> </p>
+            </center>
+    </div>
+        </div>
+</div>
+  {% endif %}<br>
+
+<div class="mx-auto">
+    <center>
+    {% if category %}
+    <img class="my_image" src="{{category.image.url}}" alt="{{category.name}}" style="width:800px; height:300px; border:10px solid black; border-radius:20%;  padding:5px;">
+    </center>
+</div>
+<br>
+<div>
+    <h1 class="text-center my_title">{{category.name}}</h1>
+    <p class="text-center text-justify">{{category.description}}</p>
+</div>
+    {% else %}
+<div>
+    <center>
+<img class="my_image my_image_padding" src="{% static 'img/banner.jpg' %}" alt="OUR MOVIES"  style="width:1300px; height:300px;">
+    </center>
+</div>
+<br>
+<div>
+    <h1 class="text-center">EXPLORE</h1>
+
+</div>
+{% endif %}
+<div class="container1">
+    <div class="row mx-auto">
+        {% for movie in movies %}
+        <div class="my_bottom_margin col-9 col-sm-12 col-md-4 xol-lg-4">
+            <div class="card text-center" style="width:20rem; height:35rem; margin-top:20px; margin-bottom:20px;">
+                 <img class="card-img-top my_image" src="{{movie.image.url}}" alt="{{movie.name}}" style="width:20rem; height:13rem;"> </a>
+                <div class="card-body">
+                    <div class="content1">
+                        <h4 >{{movie.name}}</h4>
+                        <p>Starring: {{movie.actors}}</p>
+                        <p>Genre:{{movie.category}}</p>
+                        <p>Desc:{{movie.description}}</p>
+                        <a href="{{movie.get_url}}">
+                            <button style="margin-bottom:20px; type="button" class="btn btn-info">VIEW</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+<!--    </div>-->
+<!--    <div class="mx-auto">-->
+<!--        {% if movies.paginator.num_pages > 1 %}-->
+<!--        <hr>-->
+<!--        <div class="text-center">-->
+<!--            {% for pg in movies.paginator.page_range %}-->
+<!--            <a href="?page={{pg}}" class="btn btn-light btn-sm {% if movies.number == pg %} active {% endif %}" >{{pg}}</a>-->
+<!--            {% endfor %}-->
+
+<!--        </div>-->
+<!--        {% endif %}-->
+<!--    </div>-->
+    <br>
+</div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,250 @@
+.nav-item {
+    letter-spacing :.2em;
+    font-size :14px;
+    text-transform :uppercase;
+    border:2px;:
+    color:green;
+    font-weight:bold;
+    font-style: oblique;
+    font-family: 'Times New Roman'
+
+   }
+
+.dropdown-items{
+    letter-spacing :.2em;
+    font-size :14px;
+    text-transform :uppercase;
+    font-weight:bold;
+    border:2px;
+    color: blue;
+
+}
+
+my_footer{
+   background-color:#f8f9fa;
+   height:60px;
+
+}
+
+.my_footer p{
+    padding-top:20px
+    font-size:14px
+}
+
+
+/***categorypage***/
+
+
+
+.my_row_class{
+    padding-top:15px
+}
+.my_row_class .mx_auto{
+    color:#000;
+    font-size:12px
+}
+
+.my_image{
+   width:100;
+   height:auto;
+
+}
+.my_title{
+   font-size:16px;
+   text-transform:uppercase;
+   letter-spacing:.2em;
+
+}
+
+.my_image_padding{
+    padding:5px;
+
+}
+
+.my_bottom-margin{
+    margin-bottom:10px
+
+}
+
+
+.card-body h4{
+ font-size:14px;
+ text-transform:uppercase;
+ letter-spacing:.2em
+}
+.content1 p{
+color:black;
+font-size:1em;
+font-weight:bold;
+text-align:centre;
+}
+.content p{
+color:white;
+font-size:1em;
+font-weight:bold;
+text-align:centre;
+}
+.content1 h4{
+color:red;
+font-size:1em;
+font-weight:bold;
+text-align:centre;
+}
+.content h4{
+color:red;
+font-size:1em;
+font-weight:bold;
+text-align:centre;
+}
+
+.content{
+transition:all 0.3s;
+
+}
+.content:hover{
+transform:scale(1.05);}
+}
+
+
+
+.my_prod-my_row_class{
+  padding-top:15px;
+  padding-bottom:20px;
+
+}
+.my_prod_row_class .mx_auto{
+  color:#000;
+  font-size:12px;
+  text-decoration:none;
+}
+
+
+.my_search_text{
+padding-top:20px;
+}
+
+
+
+
+/* review and rating section */
+
+.rate > input{
+display=none;
+}
+.rate{
+display:inline-block;
+border:0;
+}
+
+.rate > label{
+float:right;
+}
+
+.rate > label:before{
+display:inline-block;
+font-size:1.1 rem;
+font-family:FontAwesome;
+content:"\f005";
+margin:0;
+padding:0.3rem;
+cursor:pointer;
+}
+
+.rate .half:before{
+content:"\f089";
+position:absolute;
+padding-right:0;
+}
+
+/* signup form */
+.container1{
+margin:0;
+padding:0;
+font-family:sans-serif;
+background:#232121;
+}
+.container2{
+margin:0;
+padding:0;
+font-family:sans-serif;
+background:grey;
+}
+
+.box{
+width:800px;
+padding:10px;
+top:50%;
+position:absolute;
+left:50%;
+color:white;
+transform:translate(-50%,-50%);
+background:#191919;
+text-align:center;
+border-radius:35px;
+box-shadow:5px 5px 50px rgba(252,5,5,0.699);
+animation:animateBg 5s linear infinite;
+}
+
+@keyframes animateBg{
+    100%{
+    filter:hue-rotate(360deg);
+    }
+    }
+
+.box input{
+border:0;
+background:none;
+display:block;
+margin:1px auto;
+text_align:center;
+border:3px solid #0399fd;
+padding:14px 10px;
+width:100px;
+outline:none;
+color:white;
+border-radius:24px;
+transition:0.25s;
+}
+
+.box input[type="text"]:focus,.box input[type="email"]:focus, .box input[type="password"]:focus{
+width:280px;
+border-color:#04fb6b;
+}
+
+.box input[type="submit"]{
+border:2px ;
+background:green;
+display:block;
+margin-top:5px;
+margin:2px auto;
+text_align:center;
+font-size:100%;
+border:3px solid #04fb6b;
+padding:14px 40px;
+outline:none;
+color:green;
+border-radius:24px;
+transition:0.25s;
+cursor:poiner;
+}
+
+.box input[type="submit"].hover{
+background:#04fb6b;
+}
+
+
+
+
+/* addpage add */
+
+.add form {
+background-color:black;
+color:black;
+font-weight:bold;
+font-size:1.5em;
+}
+
+.addcontainer{
+background-color:black;
+}
+

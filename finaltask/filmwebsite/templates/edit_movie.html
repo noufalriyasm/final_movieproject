@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="{% static 'css/custom.css' %}">
+    <title>Title</title>
+</head>
+<body >
+ <h1>Edit Movie</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Changes</button>
+         <a class="btn btn-info" href="{% url 'filmapp:allProdCat' %}">
+         <button type="button" class="btn btn-info">HOME</button>
+        </a>
+    </form>
+<div>
+    {% for c in messages %}
+        {{ c }}
+        {% endfor %}
+</div>
+
+</body>
+</html>
